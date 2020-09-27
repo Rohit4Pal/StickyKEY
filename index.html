@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      p {
+        text-align: center;
+        font-size: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="demo">Result Here</p>
+    <script>
+      let result=document.getElementById("demo");
+      let count=0;
+      window.addEventListener("keydown",func);
+      function func(event){
+        if(event.shiftKey)
+          count++;
+        if(count===5){
+          result.innerHTML="Sticky Key Activated";
+          count=0;
+        }
+        setTimeout(()=>{
+          count--;
+        },5000);
+      }
+    </script>
+  </body>
+</html>
